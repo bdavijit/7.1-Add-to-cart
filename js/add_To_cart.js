@@ -25,7 +25,7 @@ const storeData = (cartData, id) => {
       data.quantity += 1;
     }
   }
-  if (InsertDone) {
+  if (InsertDone) {  
   } else {
     if (cartData.length === 0) {
       cartData = [{ id: id, quantity: 1 }];
