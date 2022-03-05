@@ -20,6 +20,16 @@
     <header>
       <h1 class="text-primary text-center mt-4">Mobile Dokan</h1>
     </header>
+
+    <section class="d-flex justify-content-center">
+      <button type="button" class="btn btn-primary position-relative" onclick="loadCard()">
+        cart
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          99+
+          <span class="visually-hidden">unread messages</span>
+        </span>
+      </button>
+    </section>
     <!-- searchBox.css -->
     <section id="searchBox">
       <div class="input-group mb-3">
@@ -79,5 +89,6 @@
     ></script>
 
     <script src="js/app.js"></script>
+    <script src="js/add_To_cart.js"></script>
   </body>
 </html>
