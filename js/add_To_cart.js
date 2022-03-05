@@ -1,8 +1,7 @@
-let cart_Item_num = 0;
-
 const loadCard = () => {
   location.href = "/cart.html";
 };
+
 const AddToCart = (id) => {
   let cartData = GetCartData();
 
@@ -10,23 +9,33 @@ const AddToCart = (id) => {
 
   upDate_Notification();
 };
+
 const upDate_Notification = () => {
   let NotificationNumber = localStorage.getItem("cart_Item_num");
-  document.getElementById("cart_Item_num").innerText = JSON.parse(NotificationNumber);
+  document.getElementById("cart_Item_num").innerText =
+    JSON.parse(NotificationNumber);
 };
 
 const storeData = (cartData, id) => {
-  console.log("ok");
-  if (cartData.length === 0) {
-    cartData = [{ id: id, quantity: 1 }];
+  //   console.log("ok");
+  let InsertDone = false;
+  for (const data of cartData) {
+    if (data.id === id) {
+      InsertDone = true;
+      data.quantity += 1;
+    }
+  }
+  if (InsertDone) {
   } else {
-    cartData = [...cartData, { id: id, quantity: 1 }];
+    if (cartData.length === 0) {
+      cartData = [{ id: id, quantity: 1 }];
+    } else {
+      cartData = [...cartData, { id: id, quantity: 1 }];
+    }
   }
 
   localStorage.setItem("cart", JSON.stringify(cartData));
   localStorage.setItem("cart_Item_num", JSON.stringify(cartData.length));
-
-  //   cart_Item_num = cartData.length;
 };
 
 const GetCartData = () => {
