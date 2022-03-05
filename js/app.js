@@ -71,10 +71,15 @@ const displayMobile = (Items) => {
         </p>
         <a 
         href="#" 
+        class="btn btn-danger d-flex justify-content-center" 
+        onclick="AddToCart('${Item.slug}')"
+        >Add to Cart</a>
+        <br />
+        <a 
+        href="#" 
         class="btn btn-primary d-flex justify-content-center" 
         onclick="LoadDetails('${Item.slug}')"
         >Details</a>
-        <br />
       </div>
 
    `;
