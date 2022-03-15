@@ -61,6 +61,7 @@ const displayMobile = (Items) => {
     document.getElementById("Item_Details").style.display = "none";
     document.getElementById("Spinner").style.display = "none";
     document.getElementById("ShowAll").style.display = "none";
+    document.getElementById("DarkFooter").style.display = "none";
     alert("No result found");
   } else {
     // control item numbers
@@ -115,8 +116,9 @@ const displayMobile = (Items) => {
     } else {
       document.getElementById("ShowAll").style.display = "block";
     }
+    document.getElementById("DarkFooter").style.display = "block";
   }
-  document.getElementById("DarkFooter").style.display = "block";
+  
 };
 
 // load product details
