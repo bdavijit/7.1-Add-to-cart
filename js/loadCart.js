@@ -18,6 +18,8 @@ const LoadCart = (id, Quintity) => {
 const displayCart = (Item, Quintity) => {
   const div = document.createElement("div");
   div.classList.add("cartItem");
+  div.classList.add("animate__animated");
+  div.classList.add("animate__bounceInUp");
   div.innerHTML = `       
     <div class="image_height">
     <img

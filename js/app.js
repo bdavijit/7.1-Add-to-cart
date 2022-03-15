@@ -73,6 +73,8 @@ const displayMobile = (Items) => {
       }
       const div = document.createElement("div");
       div.classList.add("MyCard");
+      div.classList.add("animate__animated");
+      div.classList.add("animate__bounceInUp");
       div.innerHTML = `       
       <div class="image_height">
         <img src="${Item.image}" class="my-img-fluid" alt="picture" />
