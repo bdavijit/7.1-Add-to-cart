@@ -4,10 +4,22 @@ const Item_Details = document.getElementById("Item_Details");
 const InputField_ID = document.getElementById("InputField");
 //Using variables for a better future update
 let inputText = null;
+let BrandName = null;
 
 // variables for control item numbers
 let start = 1,
   NotShowAll = true;
+
+//Nav brand Btn
+const clickBrand =(brand) =>{
+  InputField_ID.value = "";
+  BrandName = brand;
+  
+  
+  LoadItem();
+  document.getElementById("searchBox").style.display = "none";
+}
+
 
 // Load search data
 const LoadItem = () => {
@@ -20,7 +32,7 @@ const LoadItem = () => {
 
   document.getElementById("Spinner").style.display = "block";
   document.getElementById("Item_Details").style.display = "none";
-  inputText = InputField_ID.value;
+  inputText = InputField_ID.value || BrandName;
 
   // handling Number error
   if (isNaN(parseFloat(inputText))) {
