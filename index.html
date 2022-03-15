@@ -22,7 +22,9 @@
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-nav-color bg-primary">
+      <nav
+        class="navbar navbar-expand-lg navbar-dark fixed-top bg-nav-color bg-primary"
+      >
         <div class="container">
           <a class="navbar-brand" href="#"> Mobile Dokan </a>
 
@@ -39,7 +41,7 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item">
+              <li class="nav-item d-flex align-items-center">
                 <a
                   class="nav-link fw-bolder"
                   aria-current="page"
@@ -47,8 +49,15 @@
                   >Home</a
                 >
               </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <li class="nav-item dropdown d-flex align-items-center">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
                   Brand
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -56,17 +65,30 @@
                   <li><a class="dropdown-item" href="#">Samsung</a></li>
                   <li><a class="dropdown-item" href="#">Huawei</a></li>
                   <li><a class="dropdown-item" href="#">Oppo</a></li>
-                  
                 </ul>
               </li>
-              <li class="nav-item">
-                <a class="nav-link fw-bolder" href="#package">Find Your Phone</a>
+              <li class="nav-item d-flex align-items-center">
+                <a class="nav-link fw-bolder" href="#package"
+                  >Find Your Phone</a
+                >
               </li>
-              <li class="nav-item">
-                <a class="nav-link fw-bolder" href="#quis">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link fw-bolder" href="#map">Location</a>
+              <li class="nav-item d-flex align-items-center">
+                <a class="nav-link fw-bolder" href="#map">
+                  <button
+                    type="button"
+                    class="btn btn-danger position-relative"
+                    onclick="loadCard()"
+                  >
+                    cart
+                    <span
+                      id="cart_Item_num"
+                      class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary"
+                    >
+                      0
+                      <span class="visually-hidden">unread messages</span>
+                    </span>
+                  </button></a
+                >
               </li>
             </ul>
           </div>
@@ -82,7 +104,7 @@
     </header> -->
 
     <main>
-      <section class="d-flex justify-content-center">
+      <!-- <section class="d-flex justify-content-center">
         <button
           type="button"
           class="btn btn-primary position-relative"
@@ -97,7 +119,7 @@
             <span class="visually-hidden">unread messages</span>
           </span>
         </button>
-      </section>
+      </section> -->
       <!-- searchBox.css -->
       <section id="searchBox">
         <div class="input-group mb-3 animate__animated animate__backInUp">
