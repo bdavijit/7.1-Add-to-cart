@@ -116,6 +116,7 @@ const displayMobile = (Items) => {
       document.getElementById("ShowAll").style.display = "block";
     }
   }
+  document.getElementById("DarkFooter").style.display = "block";
 };
 
 // load product details
@@ -212,6 +213,7 @@ const displayDetails = (Item) => {
 
   document.getElementById("Item_Details").style.display = "block";
   document.getElementById("Spinner").style.display = "none";
+  
 };
 
 const Show_All = () => {
@@ -227,3 +229,4 @@ const CloseDetails = () => {
 document.getElementById("Spinner").style.display = "none";
 document.getElementById("Item_Details").style.display = "none";
 document.getElementById("ShowAll").style.display = "none";
+document.getElementById("DarkFooter").style.display = "none";
