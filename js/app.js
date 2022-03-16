@@ -243,6 +243,7 @@ const displayDetails = (Item) => {
    Hidden();
   document.getElementById("Item_Details").style.display = "block";
   document.getElementById("Items").style.display = "block";
+  document.getElementById("DarkFooter").style.display = "block";
   
 };
 
