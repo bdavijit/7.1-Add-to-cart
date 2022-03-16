@@ -1,3 +1,5 @@
+// const Items_ID = document.getElementById("Items");
+
 const FindPhone = () => {
     Hidden();
     document.getElementById("Item_Find").style.display = "block";
@@ -32,6 +34,8 @@ const FindPhone = () => {
   }
   console.log( typeof storage , BrandArr);
   if( storage && BrandArr.length !== 0){
+    
+    Items_ID.innerHTML = "";
     BrandArr.forEach(brand =>LoadOnlyData(brand) );
     
   }else{
@@ -76,69 +80,44 @@ const LoadOnlyData = (BrandName) => {
       alert(err.message);
     }
   };
-  let start2 = 0;
-  const displayMobilefromFilter = (Items) => {
-      console.log(Items?.mainFeatures?.storage);
-      console.log(Items?.name || "Not Found");
-      console.log(Items?.image || "Not Found");
-      console.log(Items?.name || "Not Found");
-    //No result found
-//   if( Items.mainFeatures.storage.includes(storage)){
-//         console.log(Items);
-//       // control item numbers
-//       start2 = 1;
-//       Items.forEach((Item) => {
-//         if (start > 20 && NotShowAll === true) {
-//           document.getElementById("Spinner").style.display = "none";
-//           return;
-//         }
-//         const div = document.createElement("div");
-//         div.classList.add("MyCard");
-//         div.classList.add("animate__animated");
-//         div.classList.add("animate__fadeInUp");
-//         div.innerHTML = `       
-//         <div class="image_height">
-//           <img src="${Item.image}" class="my-img-fluid" alt="picture" />
-//         </div>
-//         <div class="card-body">
-//           <h5 class="card-title text-center">${Item.phone_name}</h5>
-//           <p class="card-text text-center">
-//           ${Item.brand}
-//           </p>
-//           <a 
-//           href="#" 
-//           class="btn btn-danger d-flex justify-content-center" 
-//           onclick="AddToCart('${Item.slug}')"
-//           >Add to Cart</a>
-//           <br />
-//           <a 
-//           href="#" 
-//           class="btn btn-primary d-flex justify-content-center" 
-//           onclick="LoadDetails('${Item.slug}')"
-//           >Details</a>
-//         </div>
-  
-//      `;
-  
-//         Items_ID.appendChild(div);
-//         start++;
-//       });
-    //   document.getElementById("Spinner").style.display = "none";
-    //   // Return to normal after showing all search data
-    //   if (NotShowAll === false) {
-    //     document.getElementById("ShowAll").style.display = "none";
-    //     //Return to normal for further search
-    //     NotShowAll = true;
-    //     // To keep detailed box items
-    //     if (Item_Details.innerHTML !== "") {
-    //       document.getElementById("Item_Details").style.display = "block";
-    //     }
-    //     //scroll to bottom
-    //     window.scrollTo(0, document.body.scrollHeight);
-    //   } else {
-    //     document.getElementById("ShowAll").style.display = "block";
-    //   }
-    //   document.getElementById("DarkFooter").style.display = "block";
-    //   document.getElementById("Item_Find").style.display = "none";
-    // }
+//   let start2 = 0;
+  const displayMobilefromFilter = (Item) => {
+
+      if(Item?.mainFeatures?.storage?.includes(storage)){
+        console.log(Item?.name || "Not Found");
+        console.log(Item?.image || "Not Found");
+        console.log(Item?.brand || "Not Found");
+        console.log(Item?.mainFeatures?.storage || "Not Found");
+        // console.log(++start2);
+      
+
+      const div = document.createElement("div");
+      div.classList.add("MyCard");
+      div.classList.add("animate__animated");
+      div.classList.add("animate__fadeInUp");
+      div.innerHTML = `       
+      <div class="image_height">
+        <img src="${Item?.image || "Not Found"}" class="my-img-fluid" alt="picture" />
+      </div>
+      <div class="card-body">
+        <h5 class="card-title text-center">${Item?.name || "Not Found"}</h5>
+        <p class="card-text text-center">
+        ${Item?.brand || "Not Found"}
+        </p>
+        <a 
+        href="#" 
+        class="btn btn-danger d-flex justify-content-center" 
+        onclick="AddToCart('${Item.slug}')"
+        >Add to Cart</a>
+        <br />
+        <a 
+        href="#" 
+        class="btn btn-primary d-flex justify-content-center" 
+        onclick="LoadDetails('${Item.slug}')"
+        >Details</a>
+      </div>
+
+   `;
+   Items_ID.appendChild(div);
+}
   };
