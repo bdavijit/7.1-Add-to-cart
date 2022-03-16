@@ -11,21 +11,19 @@ let start = 1,
   NotShowAll = true;
 
 //Nav brand Btn
-const clickBrand =(brand) =>{
+const clickBrand = (brand) => {
   InputField_ID.value = "";
   BrandName = brand;
-  
-  
+
   LoadItem();
   document.getElementById("searchBox").style.display = "none";
-}
-
+};
 
 // Load search data
 const LoadItem = () => {
   Items_ID.innerHTML = "";
-  
- // To keep detailed box items
+
+  // To keep detailed box items
   if (NotShowAll === true) {
     Item_Details.innerHTML = "";
   }
@@ -41,14 +39,10 @@ const LoadItem = () => {
       fetch(URL)
         .then((res) => res.json())
         .then((data) => displayMobile(data.data));
-    }
-    catch(err) {
+    } catch (err) {
       alert(err.message);
     }
-
-
-
-  }else{
+  } else {
     alert("Number is not allowed");
     document.getElementById("Spinner").style.display = "none";
   }
@@ -82,7 +76,7 @@ const displayMobile = (Items) => {
       <div class="card-body">
         <h5 class="card-title text-center">${Item.phone_name}</h5>
         <p class="card-text text-center">
-        ${Item.brand }
+        ${Item.brand}
         </p>
         <a 
         href="#" 
@@ -109,18 +103,17 @@ const displayMobile = (Items) => {
       //Return to normal for further search
       NotShowAll = true;
       // To keep detailed box items
-      if(Item_Details.innerHTML !==  ""){
+      if (Item_Details.innerHTML !== "") {
         document.getElementById("Item_Details").style.display = "block";
       }
       //scroll to bottom
-      window.scrollTo(0,document.body.scrollHeight);
-      
+      window.scrollTo(0, document.body.scrollHeight);
     } else {
       document.getElementById("ShowAll").style.display = "block";
     }
     document.getElementById("DarkFooter").style.display = "block";
+    document.getElementById("Item_Find").style.display = "none";
   }
-  
 };
 
 // load product details
@@ -133,12 +126,9 @@ const LoadDetails = (id) => {
     fetch(URL)
       .then((res) => res.json())
       .then((data) => displayDetails(data.data));
-  }
-  catch(err) {
-    
+  } catch (err) {
     alert(err.message);
   }
-
 };
 
 // display product details
@@ -152,7 +142,9 @@ const displayDetails = (Item) => {
         class="my-img-fluid"
         alt="picture"
       />
-      <h2 style="margin: 10px 0px">${Item.name ? Item.name : "No Data found"}</h2>
+      <h2 style="margin: 10px 0px">${
+        Item.name ? Item.name : "No Data found"
+      }</h2>
     </div>
     <br />
     <div class="">
@@ -171,32 +163,63 @@ const displayDetails = (Item) => {
           <tr>
             <th scope="row">3</th>
             <td>ChipSet</td>
-            <td>${Item.mainFeatures.chipSet ? Item.mainFeatures.chipSet : "No Data found"}</td>
+            <td>${
+              Item.mainFeatures.chipSet
+                ? Item.mainFeatures.chipSet
+                : "No Data found"
+            }</td>
           </tr>
           <tr>
             <th scope="row">4</th>
             <td>DisplaySize</td>
-            <td>${Item.mainFeatures.displaySize ? Item.mainFeatures.displaySize  : "No Data found"}</td>
+            <td>${
+              Item.mainFeatures.displaySize
+                ? Item.mainFeatures.displaySize
+                : "No Data found"
+            }</td>
           </tr>
           <tr>
             <th scope="row">5</th>
             <td>Storage</td>
-            <td>${Item.mainFeatures.storage ? Item.mainFeatures.storage : "No Data found"}</td>
+            <td>${
+              Item.mainFeatures.storage
+                ? Item.mainFeatures.storage
+                : "No Data found"
+            }</td>
           </tr>
           <tr>
             <th scope="row">6</th>
             <td>Sensors</td>
-            <td>${Item.mainFeatures.sensors !== undefined || Item.mainFeatures.sensors ? Item.mainFeatures.sensors : "No Data found"}</td>
+            <td>${
+              Item.mainFeatures.sensors !== undefined ||
+              Item.mainFeatures.sensors
+                ? Item.mainFeatures.sensors
+                : "No Data found"
+            }</td>
           </tr>
           <tr>
             <th scope="row">7</th>
             <td>Others</td>
-            <td>WLAN: ${Item.others !== undefined ? Item.others.WLAN : "No Data found"}, <br />
-            Bluetooth: ${Item.others !== undefined ? Item.others.Bluetooth : "No Data found"}, <br />
-            GPS: ${Item.others !== undefined ? Item.others.GPS : "No Data found"},  <br />
-            NFC: ${Item.others !== undefined ? Item.others.NFC : "No Data found"}, <br />
-            Radio: ${Item.others !== undefined ? Item.others.Radio : "No Data found"}, <br />
-            USB: ${Item.others !== undefined ? Item.others.USB : "No Data found"}</td> <br />
+            <td>WLAN: ${
+              Item.others !== undefined ? Item.others.WLAN : "No Data found"
+            }, <br />
+            Bluetooth: ${
+              Item.others !== undefined
+                ? Item.others.Bluetooth
+                : "No Data found"
+            }, <br />
+            GPS: ${
+              Item.others !== undefined ? Item.others.GPS : "No Data found"
+            },  <br />
+            NFC: ${
+              Item.others !== undefined ? Item.others.NFC : "No Data found"
+            }, <br />
+            Radio: ${
+              Item.others !== undefined ? Item.others.Radio : "No Data found"
+            }, <br />
+            USB: ${
+              Item.others !== undefined ? Item.others.USB : "No Data found"
+            }</td> <br />
           </tr>
         </tbody>
       </table>
@@ -217,7 +240,6 @@ const displayDetails = (Item) => {
 
   document.getElementById("Item_Details").style.display = "block";
   document.getElementById("Spinner").style.display = "none";
-  
 };
 
 const Show_All = () => {
@@ -230,7 +252,20 @@ const CloseDetails = () => {
 };
 
 // Hidden sections when loading first
-document.getElementById("Spinner").style.display = "none";
-document.getElementById("Item_Details").style.display = "none";
-document.getElementById("ShowAll").style.display = "none";
-document.getElementById("DarkFooter").style.display = "none";
+const Hidden = () => {
+  document.getElementById("Spinner").style.display = "none";
+  document.getElementById("Item_Details").style.display = "none";
+  document.getElementById("ShowAll").style.display = "none";
+  document.getElementById("DarkFooter").style.display = "none";
+  document.getElementById("Item_Find").style.display = "none";
+};
+
+Hidden();
+
+const FindPhone = () => {
+  Hidden();
+  document.getElementById("Item_Find").style.display = "block";
+  window.scrollTo(0, 0);
+
+
+};

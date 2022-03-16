@@ -1,5 +1,6 @@
 /* Item Details container */
-#Item_Details {
+#Item_Details,
+#Item_Find {
   border: 1px solid #007bff;
   width: 95%;
   max-width: 1200px;
