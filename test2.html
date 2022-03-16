@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <body>
+      <p>Choose your vehicle:</p>
+      <div>
+        <input type="checkbox" id="bike" name="vehicle" value="bike" checked />
+        <label for="bike">Bike</label>
+      </div>
+      <div>
+        <input
+          type="checkbox"
+          id="scooter"
+          name="vehicle"
+          value="scooter"
+          checked
+        />
+        <label for="scooter">Scooter</label>
+      </div>
+      <div>
+        <input type="checkbox" id="car" name="vehicle" value="car" />
+        <label for="car">Car</label>
+      </div>
+      <div>
+        <input type="checkbox" id="auto" name="vehicle" value="auto" />
+        <label for="auto">Auto</label>
+      </div>
+      <div>
+        <button id="select">Get Checked Checkboxes</button>
+      </div>
+      <br />
+    </body>
+
+    <script>
+        let BrandArr = [];
+      document.getElementById("select").onclick = function () {
+        BrandArr = [];
+        var checkboxes = document.getElementsByName("vehicle");
+        for (var checkbox of checkboxes) {
+          if (checkbox.checked) {
+            // document.body.append(checkbox.value + " ");
+            BrandArr.push(checkbox.value);
+          }
+        }
+        console.log(BrandArr);
+      };
+    </script>
+  </body>
+</html>

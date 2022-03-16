@@ -262,10 +262,6 @@ const Hidden = () => {
 
 Hidden();
 
-const FindPhone = () => {
-  Hidden();
-  document.getElementById("Item_Find").style.display = "block";
-  window.scrollTo(0, 0);
 
 
-};
+

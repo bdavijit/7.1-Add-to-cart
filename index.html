@@ -172,8 +172,7 @@
         id="Item_Details"
         class="animate__animated animate__backInUp"
       ></section>
-  
-  
+
       <!-- Item_Details.css -->
       <section id="Item_Find" class="animate__animated animate__backInUp">
         <section>
@@ -183,7 +182,8 @@
               class="form-check-input"
               type="checkbox"
               id="inlineCheckbox1"
-              value="option1"
+              name="BrandNames"
+              value="Apple"
             />
             <label class="form-check-label" for="inlineCheckbox1">Apple</label>
           </div>
@@ -192,7 +192,8 @@
               class="form-check-input"
               type="checkbox"
               id="inlineCheckbox2"
-              value="option2"
+              name="BrandNames"
+              value="Samsung"
             />
             <label class="form-check-label" for="inlineCheckbox2"
               >Sumsung</label
@@ -203,7 +204,8 @@
               class="form-check-input"
               type="checkbox"
               id="inlineCheckbox3"
-              value="option2"
+              name="BrandNames"
+              value="Oppo"
             />
             <label class="form-check-label" for="inlineCheckbox2">Oppo</label>
           </div>
@@ -212,20 +214,21 @@
               class="form-check-input"
               type="checkbox"
               id="inlineCheckbox4"
-              value="option2"
+              name="BrandNames"
+              value="Huawei"
             />
             <label class="form-check-label" for="inlineCheckbox2">Huawei</label>
           </div>
         </section>
         <br />
-        <section>
+        <!-- <section>
           <h1 class="text-center">Storage</h1>
           <div class="form-check form-check-inline">
             <input
               class="form-check-input"
               type="checkbox"
               id="inlineCheckbox5"
-              value="option1"
+              value="64GB"
             />
             <label class="form-check-label" for="inlineCheckbox1">64GB</label>
           </div>
@@ -234,7 +237,7 @@
               class="form-check-input"
               type="checkbox"
               id="inlineCheckbox6"
-              value="option2"
+              value="128GB"
             />
             <label class="form-check-label" for="inlineCheckbox2">128GB</label>
           </div>
@@ -243,7 +246,7 @@
               class="form-check-input"
               type="checkbox"
               id="inlineCheckbox7"
-              value="option2"
+              value="256GB"
             />
             <label class="form-check-label" for="inlineCheckbox2">256GB</label>
           </div>
@@ -252,52 +255,60 @@
               class="form-check-input"
               type="checkbox"
               id="inlineCheckbox8"
-              value="option2"
+              value="512GB"
             />
             <label class="form-check-label" for="inlineCheckbox2">512GB</label>
           </div>
-        </section>
-        <br />
+        </section> -->
+        <!-- <br /> -->
         <section>
-          <h1 class="text-center">Display Size</h1>
+          <h1 class="text-center">Storage</h1>
           <div class="form-check form-check-inline">
             <input
               class="form-check-input"
               type="radio"
-              name="inlineRadioOptions"
+              name="Storage"
               id="inlineRadio1"
-              value="option1"
+              value="64"
             />
-            <label class="form-check-label" for="inlineRadio1">
-              less then 5 inches</label
-            >
+            <label class="form-check-label" for="inlineRadio1"> 64GB</label>
           </div>
           <div class="form-check form-check-inline">
             <input
               class="form-check-input"
               type="radio"
-              name="inlineRadioOptions"
+              name="Storage"
               id="inlineRadio2"
-              value="option2"
+              value="128"
             />
-            <label class="form-check-label" for="inlineRadio2"
-              >5-6 inches</label
-            >
+            <label class="form-check-label" for="inlineRadio2">128GB</label>
           </div>
           <div class="form-check form-check-inline">
             <input
               class="form-check-input"
               type="radio"
-              name="inlineRadioOptions"
+              name="Storage"
               id="inlineRadio3"
-              value="option2"
+              value="256"
             />
-            <label class="form-check-label" for="inlineRadio2">6+</label>
+            <label class="form-check-label" for="inlineRadio2">256GB</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="Storage"
+              id="inlineRadio3"
+              value="512"
+            />
+            <label class="form-check-label" for="inlineRadio2">512GB</label>
           </div>
         </section>
         <br />
         <div class="d-grid gap-2 col-6 mx-auto">
-          <button class="btn btn-primary" type="button">Find</button>
+          <button class="btn btn-primary" onclick="GetFindData()" type="button">
+            Find
+          </button>
         </div>
       </section>
 
@@ -399,5 +410,33 @@
     <script src="js/app.js"></script>
     <script src="js/add_To_cart.js"></script>
     <script src="js/ClickEnterBtn.js"></script>
+    <script src="js/Filter.js"></script>
+    <!-- <script>
+      let BrandArr = [],
+        storage = 0;
+      const GetFindData = () => {
+        // console.log("kk");
+        (BrandArr = []), (storage = 0);
+        var radios = document.getElementsByName("Storage");
+        for (var radio of radios) {
+          if (radio.checked) {
+            storage = radio.value;
+          }
+        }
+        GetBrandData();
+        // alert(storage);
+      };
+      const GetBrandData = () => {
+        BrandArr = [];
+        var checkboxes = document.getElementsByName("BrandNames");
+        for (var checkbox of checkboxes) {
+          if (checkbox.checked) {
+            // document.body.append(checkbox.value + " ");
+            BrandArr.push(checkbox.value);
+          }
+        }
+        console.log(storage , BrandArr);
+      };
+    </script> -->
   </body>
 </html>

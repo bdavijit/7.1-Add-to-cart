@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container">
+      <p>Select your preferred contact method:</p>
+      <div>
+        <input type="radio" id="email" name="contact" value="email" />
+        <label for="email">Email</label>
+
+        <input type="radio" id="phone" name="contact" value="phone" />
+        <label for="phone">Phone</label>
+
+        <input type="radio" id="mail" name="contact" value="mail" />
+        <label for="mail">Mail</label>
+      </div>
+      <button id="submit">Submit</button>
+    </div>
+    
+    <script>
+      document.getElementById("submit").onclick = function () {
+        var radios = document.getElementsByName("contact");
+        for (var radio of radios) {
+          if (radio.checked) {
+            alert(radio.value);
+          }
+        }
+      };
+    </script>
+  </body>
+</html>
