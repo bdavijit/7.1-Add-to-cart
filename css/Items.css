@@ -1,6 +1,6 @@
 /* product container */
-#Items {
-  display: grid;
+.myclass #Items {
+  display: grid !important;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 3rem;
 
@@ -8,8 +8,10 @@
   width: 95%;
   max-width: 1200px;
 }
+
+
 /* product Card */
-.MyCard {
+.myclass .MyCard {
   display: grid;
   align-items: end;
 
@@ -18,17 +20,18 @@
 
   transition: transform 0.2s; /* Animation */
 }
-.MyCard:hover {
+
+.myclass .MyCard:hover {
   transform: scale(1.02); /* zoom */
 }
 
-.image_height {
+.myclass .image_height {
   height: 15vw;
   margin: auto;
   padding: 5%;
 }
 
-.my-img-fluid {
+.myclass .my-img-fluid {
   max-width: 100%;
   height: auto;
   max-height: 100%;
@@ -36,10 +39,10 @@
 /* 
 mobile responsive with bootstrap 5 breakpoint*/
 @media screen and (max-width: 768px) {
-  #Items {
+  .myclass #Items {
     grid-template-columns: repeat(1, 1fr);
   }
-  .image_height {
+  .myclass .image_height {
     height: 35vw;
   }
 }

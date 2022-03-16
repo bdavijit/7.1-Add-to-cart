@@ -42,6 +42,11 @@ const displayCart = (Item, Quintity) => {
 };
 
 const loadLocalStorageData = () => {
+  Hidden();
+  document.getElementById("Cart_Box").style.display = "block";
+  document.getElementById("DarkFooter").style.display = "block";
+  // document.getElementById("Items").style.display = "none";
+  
   const cartData = localStorage.getItem("cart");
   const Datas = JSON.parse(cartData);
   console.log(Datas);
@@ -56,12 +61,12 @@ const loadLocalStorageData = () => {
   
 };
 
-loadLocalStorageData();
+// loadLocalStorageData();
 
 document.getElementById("Spinner").style.display = "none";
 
 //get localStorage data
-const GetCartData = () => {
+const GetCartData2 = () => {
   const cartData = localStorage.getItem("cart");
 
   if (cartData === null) {
@@ -75,7 +80,7 @@ const GetCartData = () => {
 //delete cart data
 const DeleteCartData = (id) =>{
   console.log(id);
-  let cartData = GetCartData();
+  let cartData = GetCartData2();
   let AfterDelete = cartData.filter(Data => Data.id != id);
   cartData = AfterDelete;
 

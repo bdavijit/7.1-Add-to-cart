@@ -113,6 +113,8 @@ const displayMobile = (Items) => {
     }
     document.getElementById("DarkFooter").style.display = "block";
     document.getElementById("Item_Find").style.display = "none";
+    document.getElementById("Items").style.display = "block";
+    document.getElementById("Cart_Box").style.display = "none";
   }
 };
 
@@ -237,9 +239,11 @@ const displayDetails = (Item) => {
    `;
 
   Item_Details.appendChild(div);
-
+  
+   Hidden();
   document.getElementById("Item_Details").style.display = "block";
-  document.getElementById("Spinner").style.display = "none";
+  document.getElementById("Items").style.display = "block";
+  
 };
 
 const Show_All = () => {
@@ -258,6 +262,8 @@ const Hidden = () => {
   document.getElementById("ShowAll").style.display = "none";
   document.getElementById("DarkFooter").style.display = "none";
   document.getElementById("Item_Find").style.display = "none";
+  document.getElementById("Cart_Box").style.display = "none";
+  document.getElementById("Items").style.display = "none";
 };
 
 Hidden();

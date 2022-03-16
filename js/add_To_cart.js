@@ -1,6 +1,6 @@
-const loadCard = () => {
-  location.href = "/cart.html";
-};
+// const loadCard = () => {
+//   location.href = "/cart.html";
+// };
 
 const AddToCart = (id) => {
   let cartData = GetCartData();

@@ -3,6 +3,8 @@
 const FindPhone = () => {
     Hidden();
     document.getElementById("Item_Find").style.display = "block";
+    document.getElementById("DarkFooter").style.display = "block";
+    document.getElementById("Items").style.display = "block"
     window.scrollTo(0, 0);
   
   

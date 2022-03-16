@@ -15,11 +15,14 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
+    <link rel="stylesheet" href="css/Cart_Box.css" />
     <link rel="stylesheet" href="css/Items.css" />
     <link rel="stylesheet" href="css/searchBox.css" />
     <link rel="stylesheet" href="css/Spinner.css" />
     <link rel="stylesheet" href="css/Item_Details.css" />
     <link rel="stylesheet" href="css/Dark footer.css" />
+    
+    
     <!-- fontawesome -->
     <script
       src="https://kit.fontawesome.com/98ab0897f2.js"
@@ -114,7 +117,7 @@
                   <button
                     type="button"
                     class="btn btn-danger position-relative"
-                    onclick="loadCard()"
+                    onclick="loadLocalStorageData()"
                   >
                     cart
                     <span
@@ -159,6 +162,8 @@
           </button>
         </div>
       </section>
+            <!-- Cart_Box.css.css-->
+      <section id="Cart_Box">5</section> 
 
       <!-- Spinner.css -->
       <section id="Spinner">
@@ -313,7 +318,7 @@
       </section>
 
       <!-- Items.css -->
-      <section id="Items" class="animate__animated animate__backInUp"></section>
+      <div class="myclass"><section id="Items" class="animate__animated animate__backInUp"></section></div>
 
       <!-- Show All btn -->
       <div class="d-grid gap-2 col-6 mx-auto mt-4 mb-4">
@@ -411,32 +416,7 @@
     <script src="js/add_To_cart.js"></script>
     <script src="js/ClickEnterBtn.js"></script>
     <script src="js/Filter.js"></script>
-    <!-- <script>
-      let BrandArr = [],
-        storage = 0;
-      const GetFindData = () => {
-        // console.log("kk");
-        (BrandArr = []), (storage = 0);
-        var radios = document.getElementsByName("Storage");
-        for (var radio of radios) {
-          if (radio.checked) {
-            storage = radio.value;
-          }
-        }
-        GetBrandData();
-        // alert(storage);
-      };
-      const GetBrandData = () => {
-        BrandArr = [];
-        var checkboxes = document.getElementsByName("BrandNames");
-        for (var checkbox of checkboxes) {
-          if (checkbox.checked) {
-            // document.body.append(checkbox.value + " ");
-            BrandArr.push(checkbox.value);
-          }
-        }
-        console.log(storage , BrandArr);
-      };
-    </script> -->
+    <script src="js/loadCart.js"></script>
+    
   </body>
 </html>
